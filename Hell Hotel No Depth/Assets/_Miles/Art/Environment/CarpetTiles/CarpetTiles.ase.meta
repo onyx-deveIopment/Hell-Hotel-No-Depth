@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: HotelTiles
     originalName: 
-    pivot: {x: 0.5, y: -1.5}
+    pivot: {x: 0.5, y: -1.3188406}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -138,7 +138,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 160
-      height: 64
+      height: 69
     spriteID: ccdb3b9961a7c64479840a16a30987a0
     spriteBone: []
     spriteOutline: []
@@ -168,9 +168,9 @@ ScriptedImporter:
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 96
+        y: 91
         width: 160
-        height: 64
+        height: 69
       spriteId: ccdb3b9961a7c64479840a16a30987a0
     linkedCells: []
     tileCells: []
