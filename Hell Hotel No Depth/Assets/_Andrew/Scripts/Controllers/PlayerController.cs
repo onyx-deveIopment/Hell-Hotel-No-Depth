@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("IsMoving", move.magnitude > 0f ? 1f : 0f);
     }
 
-    public void MoveInputReceived(InputAction.CallbackContext context) => MoveInput = context.ReadValue<Vector2>();
+    public void MoveInputReceived(InputAction.CallbackContext _context) => MoveInput = _context.ReadValue<Vector2>();
 
-    public void SetPlayerCanMove(bool canMove) => PlayerCanMove = canMove;
+    public void SetPlayerCanMove(bool _playerCanMove) => PlayerCanMove = _playerCanMove;
     public float GetDirection() => Direction;
 }

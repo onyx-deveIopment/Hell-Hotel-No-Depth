@@ -10,7 +10,7 @@ public class InventoryController : MonoBehaviour
 
     private void Awake() => Instance = this;
 
-    public void AddToInventory(string _Item) => Inventory.Add(_Item);
-    public void RemoveFromInventory(string _Item) => Inventory.Remove(_Item);
-    public bool DoesInventoryHaveItem(string _Item) => Inventory.Contains(_Item);
+    public void AddToInventory(string _item) => Inventory.Add(_item);
+    public void RemoveFromInventory(string _item) => Inventory.Remove(_item);
+    public bool DoesInventoryHaveItem(string _item) => Inventory.Contains(_item);
 }

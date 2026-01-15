@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interactable : MonoBehaviour
+public class InteractableController : MonoBehaviour
 {
     [Header("Events")]
-    [SerializeField] private UnityEvent<Interactable> OnInteract;
+    [SerializeField] private UnityEvent<InteractableController> OnInteract;
 
     [Header("Debug")]
     [SerializeField] private bool Hovered;
@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
 
     public void Start() => gameObject.layer = LayerMask.NameToLayer("Interactable");
 
-    public void SetHovered(bool _Hovered) => Hovered = _Hovered;
+    public void SetHovered(bool _hovered) => Hovered = _hovered;
 
     public void Interact()
     {

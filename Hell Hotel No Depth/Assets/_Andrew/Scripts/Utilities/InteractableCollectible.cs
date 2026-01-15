@@ -5,11 +5,11 @@ public class InteractableCollectible : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private string ItemName;
 
-    public void OnCollect(Interactable source)
+    public void OnCollect(InteractableController _source)
     {
         InventoryController.Instance.AddToInventory(ItemName);
         
-        source.EndInteraction();
+        _source.EndInteraction();
         Destroy(gameObject);
     }
 }

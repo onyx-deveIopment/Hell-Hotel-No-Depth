@@ -12,7 +12,7 @@ public class InteractController : MonoBehaviour
     [SerializeField] private float Reach = 1;
 
     [Header("Debug")]
-    [SerializeField] private Interactable HoveredInteractable;
+    [SerializeField] private InteractableController HoveredInteractable;
     [SerializeField] private bool InteractInputQueued;
     [SerializeField] private bool AwaitingInteracCompletion;
 
@@ -35,7 +35,7 @@ public class InteractController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Linecast(origin, target, 1 << LayerMask.NameToLayer("Interactable"));
         if (hit.collider != null)
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            InteractableController interactable = hit.collider.GetComponent<InteractableController>();
             if (interactable != null)
             {
                 HoveredInteractable = interactable;
@@ -59,5 +59,5 @@ public class InteractController : MonoBehaviour
 
     public void NotifyInteractionComplete() => AwaitingInteracCompletion = false;
 
-    public void InteractInputReceived(InputAction.CallbackContext context) { if (context.performed) InteractInputQueued = true; }
+    public void InteractInputReceived(InputAction.CallbackContext _context) { if (_context.performed) InteractInputQueued = true; }
 }
