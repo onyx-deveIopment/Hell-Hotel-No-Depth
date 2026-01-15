@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float MoveSpeed = 5f;
 
     [Header("Debug")]
+    [SerializeField] private bool PlayerCanMove = true;
     [SerializeField] private float Direction;
     [SerializeField] private Vector2 MoveInput;
 
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!PlayerCanMove) return;
+
         Vector2 move = MoveInput * MoveSpeed * Time.deltaTime;
         rigidBody.MovePosition(rigidBody.position + move);
 
@@ -30,4 +33,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void MoveInputReceived(InputAction.CallbackContext context) => MoveInput = context.ReadValue<Vector2>();
+
+    public void SetPlayerCanMove(bool canMove) => PlayerCanMove = canMove;
+    public float GetDirection() => Direction;
 }
