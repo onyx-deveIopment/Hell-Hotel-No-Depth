@@ -12,10 +12,7 @@ public class PixelPerfectController : MonoBehaviour
     [Header ("Debug")]
     [SerializeField] private Vector3 Offset;
 
-    private void Start()
-    {
-        Offset = transform.position - ReferencePosition.position;
-    }
+    private void Start() => Offset = transform.position - ReferencePosition.position;
 
     private void LateUpdate()
     {
