@@ -21,7 +21,6 @@ public class InteractController : MonoBehaviour
     private void Update()
     {
         AttemptInteract();
-
         InteractInputQueued = false;
     }
 
