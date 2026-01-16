@@ -3,16 +3,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogFrame", menuName = "Dialog/DialogFrame")]
 public class DialogFrameScriptableObject : ScriptableObject
 {
+    [Header("Portrait")]
+    [SerializeField] public Sprite Portrait;
+
     [Header("Text Settings")]
-    [SerializeField] private string SpeakerName;
-    [SerializeField][TextArea(3, 10)] private string DialogText;
+    [SerializeField] public string SpeakerName;
+    [SerializeField][TextArea(3, 10)] public string DialogText;
 
     [Header("Options")]
-    [SerializeField] private string OptionOne;
-    [SerializeField] private string OptionTwo;
-    [SerializeField] private string OptionThree;
-    [SerializeField] private string OptionFour;
+    [SerializeField] public string OptionOne;
+    [SerializeField] public string OptionTwo;
+    [SerializeField] public string OptionThree;
+    [SerializeField] public string OptionFour;
 
     [Header("Next Frames")]
-    [SerializeField] private DialogFrameScriptableObject[] NextFrames;
+    [SerializeField] public DialogFrameScriptableObject[] NextFrames;
+
+    [Header("Audio")]
+    [SerializeField] public AudioClip DialogAudioClip;
 }
