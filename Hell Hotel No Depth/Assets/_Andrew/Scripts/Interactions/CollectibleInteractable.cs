@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractableCollectible : MonoBehaviour
+public class CollectibleInteractable : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private string ItemName;
