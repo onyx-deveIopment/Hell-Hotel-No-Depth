@@ -38,6 +38,7 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
+        Pannel.SetActive(false);
         if (LoadTestDialogOnStart) LoadFrame(TestDialogFrame);
     }
 
