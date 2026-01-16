@@ -30,7 +30,6 @@ public class DialogController : MonoBehaviour
     [SerializeField] public UnityEvent<DialogController> OnDialogEnded;
 
     [Header("Debug")]
-    [SerializeField] private bool InDialog = false;
     [SerializeField] private DialogFrameScriptableObject CurrentDialogFrame;
     [Space]
     [SerializeField] private bool LoadTestDialogOnStart = false;
@@ -49,13 +48,11 @@ public class DialogController : MonoBehaviour
         if (_frame == null)
         {
             Pannel.SetActive(false);
-            InDialog = false;
             OnDialogEnded.Invoke(null);
             return;
         }
 
         Pannel.SetActive(true);
-        InDialog = true;
 
         CurrentDialogFrame = _frame;
         PortraitImage.sprite = CurrentDialogFrame.Portrait;
