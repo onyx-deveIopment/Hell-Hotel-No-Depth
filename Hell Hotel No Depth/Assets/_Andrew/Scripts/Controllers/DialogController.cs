@@ -27,7 +27,7 @@ public class DialogController : MonoBehaviour
     [SerializeField] private DialogFrameScriptableObject TestDialogFrame;
 
     [Header("Events")]
-    [SerializeField] private UnityEvent<InteractableController> OnDialogEnded;
+    [SerializeField] public UnityEvent<DialogController> OnDialogEnded;
 
     [Header("Debug")]
     [SerializeField] private bool InDialog = false;
@@ -42,8 +42,10 @@ public class DialogController : MonoBehaviour
         if (LoadTestDialogOnStart) LoadFrame(TestDialogFrame);
     }
 
-    private void LoadFrame(DialogFrameScriptableObject _frame)
+    public void LoadFrame(DialogFrameScriptableObject _frame)
     {
+        _AudioSource.Stop();
+
         if (_frame == null)
         {
             Pannel.SetActive(false);
@@ -54,12 +56,13 @@ public class DialogController : MonoBehaviour
 
         Pannel.SetActive(true);
         InDialog = true;
-        _AudioSource.Stop();
 
         CurrentDialogFrame = _frame;
         PortraitImage.sprite = CurrentDialogFrame.Portrait;
         SpeakerNameText.text = CurrentDialogFrame.SpeakerName;
         DialogText.text = CurrentDialogFrame.DialogText;
+
+        ButtonOne.GetComponent<Button>().Select();
 
         ButtonOne.SetActive(CurrentDialogFrame.OptionOne != "");
         ButtonOneText.text = CurrentDialogFrame.OptionOne;
