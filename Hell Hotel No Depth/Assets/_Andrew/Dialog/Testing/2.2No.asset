@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2.2No
   m_EditorClassIdentifier: Assembly-CSharp::DialogFrameScriptableObject
   Portrait: {fileID: -3003710262740245999, guid: cee1ca6a3951ea940b0bbb38be45b1a3, type: 3}
-  SpeakerName: Andrew
+  SpeakerName: Andrew Cromar
   DialogText: Well, you are wrong. Jump in a hole, stay there.
   OptionOne: Exit.
   OptionTwo: 

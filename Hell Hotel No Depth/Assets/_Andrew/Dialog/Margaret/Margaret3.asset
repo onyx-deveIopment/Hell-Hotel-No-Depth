@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b5baac5886956c478240555009cb462, type: 3}
-  m_Name: 2.1Yes
+  m_Name: Margaret3
   m_EditorClassIdentifier: Assembly-CSharp::DialogFrameScriptableObject
-  Portrait: {fileID: -3003710262740245999, guid: cee1ca6a3951ea940b0bbb38be45b1a3, type: 3}
-  SpeakerName: Andrew Cromar
-  DialogText: Good, you accepted the truth.
-  OptionOne: Exit.
-  OptionTwo: 
-  OptionThree: 
+  Portrait: {fileID: -1134911732033638246, guid: cee1ca6a3951ea940b0bbb38be45b1a3, type: 3}
+  SpeakerName: Margaret
+  DialogText: Okay... Rose... ah! Here we are. Okay you are all checked in, here
+    is your room key. Try not to lose it. I'm Margaret if you need my help again.
+  OptionOne: Thanks for your help.
+  OptionTwo: Have a good one.
+  OptionThree: See you later.
   OptionFour: 
   NextFrames: []
-  DialogAudioClip: {fileID: 8300000, guid: 7a479d3dc9ca0364bb5c278152b5727f, type: 3}
+  DialogAudioClip: {fileID: 0}

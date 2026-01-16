@@ -16,20 +16,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool PlayerCanMove = true;
     [SerializeField] private float Direction;
     [SerializeField] private Vector2 MoveInput;
+    [SerializeField] private Vector2 Move;
+    [SerializeField] private Vector2 LastPosition;
 
     private void Awake() => Instance = this;
 
     private void FixedUpdate()
     {
+        MovePlayer();
+        UpdateGraphics();
+        LastPosition = rigidBody.position;
+    }
+
+    private void MovePlayer()
+    {
         if (!PlayerCanMove) return;
+        Move = MoveInput * MoveSpeed * Time.deltaTime;
+        rigidBody.MovePosition(rigidBody.position + Move);
+    }
 
-        Vector2 move = MoveInput * MoveSpeed * Time.deltaTime;
-        rigidBody.MovePosition(rigidBody.position + move);
-
-        if (MoveInput != Vector2.zero) Direction = Mathf.Atan2(MoveInput.y, MoveInput.x) * Mathf.Rad2Deg;
+    private void UpdateGraphics()
+    {
+        if (MoveInput != Vector2.zero && PlayerCanMove) Direction = Mathf.Atan2(MoveInput.y, MoveInput.x) * Mathf.Rad2Deg;
 
         animator.SetFloat("Direction", Direction);
-        animator.SetFloat("IsMoving", move.magnitude > 0f ? 1f : 0f);
+        animator.SetFloat("IsMoving", (LastPosition - rigidBody.position).magnitude > 0f ? 1f : 0f);
     }
 
     public void MoveInputReceived(InputAction.CallbackContext _context) => MoveInput = _context.ReadValue<Vector2>();
