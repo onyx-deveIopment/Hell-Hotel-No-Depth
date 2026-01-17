@@ -12,13 +12,14 @@ public class DialogInteractable : MonoBehaviour
     {
         Source = _source;
         DialogController.Instance.LoadFrame(DialogFrame);
-        DialogController.Instance.OnDialogEnded.AddListener(OnDialogEnded);
         PlayerController.Instance.SetPlayerCanMove(false);
+        DialogController.Instance.OnDialogEnded.AddListener(OnDialogEnded);
     }
 
     public void OnDialogEnded(DialogController _)
     {
         PlayerController.Instance.SetPlayerCanMove(true);
+        DialogController.Instance.OnDialogEnded.RemoveListener(OnDialogEnded);
         Source.EndInteraction();
     }
 }
