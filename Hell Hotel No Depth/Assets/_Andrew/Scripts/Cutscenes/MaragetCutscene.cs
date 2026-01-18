@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class MaragetCutscene : MonoBehaviour
@@ -8,13 +9,26 @@ public class MaragetCutscene : MonoBehaviour
     [SerializeField] private Transform TeleportPosition;
     [SerializeField] private TimeWaster _TimeWaster;
     [SerializeField] private ObjectiveScriptableObject Objective;
+    [SerializeField] private Animator _Animator;
+    [SerializeField] private Transform IdlePosition;
+    [SerializeField] private Transform MovePosition;
 
     [Header("Settings")]
     [SerializeField] private int CameraQuickFrames = 5;
-    [SerializeField] private float WasteTime = 2f;
+    [SerializeField] private float WasteTime = 2;
+    [SerializeField] private float MoveTime = 3;
+    [SerializeField] private float MoveSpeed = 5;
 
     [Header("Debug")]
     [SerializeField] private InteractableController Source;
+    [SerializeField] private Transform TargetPosition;
+
+    private void Start() => TargetPosition = IdlePosition;
+
+    private void Update()
+    {
+        MargaretGraphics.position = Vector3.MoveTowards(MargaretGraphics.position, TargetPosition.position, MoveSpeed * Time.deltaTime);
+    }
 
     public void OnInteract(InteractableController _source)
     {
@@ -28,6 +42,17 @@ public class MaragetCutscene : MonoBehaviour
 
     public void OnDialogEnd(DialogController _)
     {
+        DialogController.Instance.OnDialogEnded.RemoveListener(OnDialogEnd);
+        _TimeWaster.OnTimeWasted.AddListener(OnDoneMoveing);
+        _Animator.SetBool("idle", false);
+        TargetPosition = MovePosition;
+        _TimeWaster.WasteTime(MoveTime);
+    }
+
+    public void OnDoneMoveing(TimeWaster _)
+    {
+        _TimeWaster.OnTimeWasted.RemoveListener(OnDoneMoveing);
+        CameraController.Instance.RemoveTarget(MargaretGraphics);
         BlacknessController.Instance.OnBlacknessFadedIn.AddListener(OnBlacknessFadedIn);
         BlacknessController.Instance.SetFadeIn(true);
     }
@@ -36,7 +61,6 @@ public class MaragetCutscene : MonoBehaviour
     {
         BlacknessController.Instance.OnBlacknessFadedIn.RemoveListener(OnBlacknessFadedIn);
         PlayerController.Instance.TeleportTo(TeleportPosition.position);
-        CameraController.Instance.RemoveTarget(MargaretGraphics);
         CameraController.Instance.Quick(CameraQuickFrames);
         _TimeWaster.OnTimeWasted.AddListener(OnTimeWasted);
         _TimeWaster.WasteTime(WasteTime);
