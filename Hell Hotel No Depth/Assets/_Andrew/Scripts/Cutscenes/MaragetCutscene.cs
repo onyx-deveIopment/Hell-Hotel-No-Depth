@@ -7,6 +7,7 @@ public class MaragetCutscene : MonoBehaviour
     [SerializeField] private DialogFrameScriptableObject DialogFrame;
     [SerializeField] private Transform TeleportPosition;
     [SerializeField] private TimeWaster _TimeWaster;
+    [SerializeField] private ObjectiveScriptableObject Objective;
 
     [Header("Settings")]
     [SerializeField] private int CameraQuickFrames = 5;
@@ -53,6 +54,7 @@ public class MaragetCutscene : MonoBehaviour
         BlacknessController.Instance.OnBlacknessFadedOut.RemoveListener(OnCutsceneEnd);
         DialogController.Instance.OnDialogEnded.RemoveListener(OnDialogEnd);
         PlayerController.Instance.SetPlayerCanMove(true);
+        ObjectiveController.Instance.Popup(Objective);
 
         Source.EndInteraction();
     }
