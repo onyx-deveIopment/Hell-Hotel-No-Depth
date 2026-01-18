@@ -6,6 +6,7 @@ public class MaragetCutscene : MonoBehaviour
     [SerializeField] private Transform MargaretGraphics;
     [SerializeField] private DialogFrameScriptableObject DialogFrame;
     [SerializeField] private Transform TeleportPosition;
+    [SerializeField] private TimeWaster _TimeWaster;
 
     [Header("Settings")]
     [SerializeField] private int CameraQuickFrames = 5;
@@ -36,13 +37,13 @@ public class MaragetCutscene : MonoBehaviour
         PlayerController.Instance.TeleportTo(TeleportPosition.position);
         CameraController.Instance.RemoveTarget(MargaretGraphics);
         CameraController.Instance.Quick(CameraQuickFrames);
-        TimeWaster.Instance.OnTimeWasted.AddListener(OnTimeWasted);
-        TimeWaster.Instance.WasteTime(WasteTime);
+        _TimeWaster.OnTimeWasted.AddListener(OnTimeWasted);
+        _TimeWaster.WasteTime(WasteTime);
     }
 
     public void OnTimeWasted(TimeWaster _)
     {
-        TimeWaster.Instance.OnTimeWasted.RemoveListener(OnTimeWasted);
+        _TimeWaster.OnTimeWasted.RemoveListener(OnTimeWasted);
         BlacknessController.Instance.OnBlacknessFadedOut.AddListener(OnCutsceneEnd);
         BlacknessController.Instance.SetFadeIn(false);
     }

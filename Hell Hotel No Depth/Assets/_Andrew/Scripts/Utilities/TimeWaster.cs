@@ -3,15 +3,11 @@ using UnityEngine.Events;
 
 public class TimeWaster : MonoBehaviour
 {
-    [HideInInspector] public static TimeWaster Instance;
-
     [Header("Events")]
     [SerializeField] public UnityEvent<TimeWaster> OnTimeWasted;
 
     [Header("Debug")]
     [SerializeField] private float Timer;
-
-    private void Awake() => Instance = this;
 
     private void Update()
     {

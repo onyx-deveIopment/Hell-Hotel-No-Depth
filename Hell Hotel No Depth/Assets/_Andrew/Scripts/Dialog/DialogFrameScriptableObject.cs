@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DialogFrame", menuName = "Dialog/DialogFrame")]
+[CreateAssetMenu(fileName = "NewDialogFrame", menuName = "Dialog/DialogFrame")]
 public class DialogFrameScriptableObject : ScriptableObject
 {
     [Header("Portrait")]
