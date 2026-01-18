@@ -10,8 +10,7 @@ public class BlacknessController : MonoBehaviour
     [SerializeField] private Image BlacknessPannel;
 
     [Header("Settings")]
-    [SerializeField] private float Speed = 5;
-    [SerializeField] private float Buffer = 0.001f;
+    [SerializeField] private float Speed = 5f;
 
     [Header("Events")]
     [SerializeField] public UnityEvent<BlacknessController> OnBlacknessFadedIn;
@@ -19,19 +18,20 @@ public class BlacknessController : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private bool FadeIn = false;
-    [SerializeField] private float TargetAlpha = 0;
+    [SerializeField] private float TargetAlpha = 0f;
+
 
     private void Awake() => Instance = this;
 
-    public void Update()
+    private void Update()
     {
-        TargetAlpha = FadeIn ? 1 : 0;
+        TargetAlpha = FadeIn ? 1f : 0f;
 
         Color color = BlacknessPannel.color;
-        color.a = Mathf.Lerp(color.a, TargetAlpha, Speed * Time.deltaTime);
+        color.a = Mathf.MoveTowards(color.a, TargetAlpha, Speed * Time.deltaTime);
         BlacknessPannel.color = color;
 
-        if (Mathf.Abs(color.a - TargetAlpha) < Buffer)
+        if (color.a == TargetAlpha)
         {
             if (FadeIn)
                 OnBlacknessFadedIn.Invoke(this);
@@ -40,5 +40,5 @@ public class BlacknessController : MonoBehaviour
         }
     }
 
-    public void SetFadeIn(bool _fadeIn) => FadeIn = _fadeIn;
+    public void SetFadeIn(bool fadeIn) => FadeIn = fadeIn;
 }
