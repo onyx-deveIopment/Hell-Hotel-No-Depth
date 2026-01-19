@@ -3,9 +3,6 @@ using UnityEngine.Events;
 
 public class InteractableController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Outline _Outline;
-
     [Header("Events")]
     [SerializeField] private UnityEvent<InteractableController> OnInteract;
 
@@ -14,12 +11,6 @@ public class InteractableController : MonoBehaviour
     [SerializeField] private int activeTasks = 0;
 
     private void Start() => gameObject.layer = LayerMask.NameToLayer("Interactable");
-
-    private void Update()
-    {
-        if (_Outline == null) return;
-        _Outline.enabled = Hovered;
-    }
 
     public void SetHovered(bool _hovered) => Hovered = _hovered;
 
