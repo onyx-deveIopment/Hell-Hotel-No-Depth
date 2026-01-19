@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 401312f1fd86fb04c96af183d7333a75
+guid: b1d3bf5dd4252d24fad20d8f4800f65e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: MargaretSpriteSheet_Portrait
+  - name: DialogInterface_Button
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 36
-      height: 57
-    spriteID: 8f5d762b73d0bac4e8896f3905a57a0e
+      width: 50
+      height: 33
+    spriteID: bc813729ce5515a4482c46b0f91dc7a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2595778185
+      value0: 4024640826
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: MargaretSpriteSheet_Portrait
+    name: DialogInterface_Button
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: MargaretSpriteSheet_Portrait
+    - name: DialogInterface_Button
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 14
+        x: 0
         y: 0
-        width: 36
-        height: 57
-      spriteId: 8f5d762b73d0bac4e8896f3905a57a0e
+        width: 50
+        height: 33
+      spriteId: bc813729ce5515a4482c46b0f91dc7a6
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 64, y: 128}
+  canvasSize: {x: 50, y: 33}
+  previousTextureSize: {x: 64, y: 64}

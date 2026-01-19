@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5baac5886956c478240555009cb462, type: 3}
   m_Name: Margaret1
   m_EditorClassIdentifier: Assembly-CSharp::DialogFrameScriptableObject
-  Portrait: {fileID: -1134911732033638246, guid: cee1ca6a3951ea940b0bbb38be45b1a3, type: 3}
+  Portrait: {fileID: 21300000, guid: fa4f03c4c59eb0c409bd79f7ed27a745, type: 3}
   SpeakerName: Receptionist
   DialogText: Hello, welcome to the hotel. Are you ready to be checked in?
   OptionOne: Yes please.
-  OptionTwo: 
+  OptionTwo: Yep.
   OptionThree: 
   OptionFour: 
   NextFrames:
+  - {fileID: 11400000, guid: 6e5877e31a22cca49a484a4870e5eead, type: 2}
   - {fileID: 11400000, guid: 6e5877e31a22cca49a484a4870e5eead, type: 2}
   DialogAudioClip: {fileID: 0}
