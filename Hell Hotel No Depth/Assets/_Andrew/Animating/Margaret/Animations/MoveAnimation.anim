@@ -31,7 +31,7 @@ AnimationClip:
     - time: 0.8
       value: {fileID: 8517984393410079469, guid: 0a3c5e932a5c2bb4db67697477eb7e8b, type: 3}
     attribute: m_Sprite
-    path: Graphics/Margaret
+    path: Margaret
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -43,7 +43,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 4243594793
+      path: 210652684
       attribute: 0
       script: {fileID: 0}
       typeID: 212
