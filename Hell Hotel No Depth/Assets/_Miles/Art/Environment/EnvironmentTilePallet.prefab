@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2523110694514572284}
   - component: {fileID: 1592736797616948775}
   m_Layer: 0
-  m_Name: HotelTilePallet
+  m_Name: EnvironmentTilePallet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

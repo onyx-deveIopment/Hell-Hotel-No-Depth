@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7347e04c0e55ced4bb5eaa5b9fecc411
+guid: 669e03b29b52238469c792234b37d2ec
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: DoorTiles
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.033333335}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 192
-      height: 32
-    spriteID: 17fa76728dc29b047bea2bc94d643dc9
+      width: 32
+      height: 30
+    spriteID: 7bbb106b7ab464547b95e5c78f8f65a4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -167,11 +167,11 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 192
-        height: 32
-      spriteId: 17fa76728dc29b047bea2bc94d643dc9
+        x: 1
+        y: 1
+        width: 32
+        height: 30
+      spriteId: 7bbb106b7ab464547b95e5c78f8f65a4
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 192, y: 32}
-  previousTextureSize: {x: 256, y: 64}
+  canvasSize: {x: 34, y: 34}
+  previousTextureSize: {x: 64, y: 64}
