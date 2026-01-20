@@ -4,7 +4,8 @@ public class DoorController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Animator _Animator;
-    [SerializeField] private BoxCollider2D _BoxCollider2D;
+    [SerializeField] private BoxCollider2D AboveCollider;
+    [SerializeField] private BoxCollider2D BelowCollider;
 
     [Header("Settings")]
     [SerializeField] private float PlayerBelowZPosition = 1;
@@ -17,15 +18,17 @@ public class DoorController : MonoBehaviour
     private void Update()
     {
         CheckPlayerPosition();
-        
+
         transform.position = new Vector3(
             transform.position.x,
             transform.position.y,
             PlayerAbove ? PlayerAboveZPosition : PlayerBelowZPosition
         );
 
-        _Animator.SetFloat("direction", Direction);
-        _BoxCollider2D.enabled = Direction == 0;
+        _Animator.SetInteger("direction", (int)Direction);
+
+        AboveCollider.enabled = Direction == 0 && PlayerAbove;
+        BelowCollider.enabled = Direction == 0 && !PlayerAbove;
     }
 
     private void CheckPlayerPosition() => PlayerAbove = PlayerController.Instance.GetPosition().y > transform.position.y;
