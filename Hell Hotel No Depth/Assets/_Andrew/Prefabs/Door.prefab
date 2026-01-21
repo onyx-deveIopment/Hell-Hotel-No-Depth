@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 5611249101198404677}
   - component: {fileID: 4910007458445045371}
   - component: {fileID: 6347523143931621750}
+  - component: {fileID: 5702954765949826385}
+  - component: {fileID: 49964203313569142}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -168,6 +170,8 @@ MonoBehaviour:
   BelowCollider: {fileID: 5611249101198404677}
   PlayerBelowZPosition: 1
   PlayerAboveZPosition: -1
+  YBuffer: 0.1
+  OpenYBuffer: -0.15
   PlayerAbove: 0
   Direction: 0
 --- !u!114 &5633055002602499956
@@ -182,7 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ca96a3bbf45b44780ec0ca465d91f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableController
-  OutlineObjects: []
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -266,7 +269,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.61}
+  m_Offset: {x: 0, y: 0.625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -276,7 +279,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
 --- !u!61 &4910007458445045371
 BoxCollider2D:
@@ -312,7 +315,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.3}
+  m_Offset: {x: 0, y: -0.375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -322,7 +325,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 1, y: 0.25}
   m_EdgeRadius: 0
 --- !u!61 &6347523143931621750
 BoxCollider2D:
@@ -370,6 +373,80 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!70 &5702954765949826385
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158773967022346769}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.4375, y: 0}
+  m_Size: {x: 0.12, y: 1}
+  m_Direction: 0
+--- !u!70 &49964203313569142
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158773967022346769}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.4375, y: 0}
+  m_Size: {x: 0.12, y: 1}
+  m_Direction: 0
 --- !u!1 &8251957509791634419
 GameObject:
   m_ObjectHideFlags: 0

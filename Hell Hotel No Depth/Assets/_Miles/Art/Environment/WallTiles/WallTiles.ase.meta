@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: WallTiles
     originalName: 
-    pivot: {x: 0.5347222, y: -0.32894737}
+    pivot: {x: 0.536193, y: -0.07258065}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 144
-      height: 76
+      width: 373
+      height: 372
     spriteID: e454963ed30d93649ad48a5b4c4f6f17
     spriteBone: []
     spriteOutline: []
@@ -167,10 +167,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 25
-        y: 25
-        width: 144
-        height: 76
+        x: 0
+        y: 27
+        width: 373
+        height: 372
       spriteId: e454963ed30d93649ad48a5b4c4f6f17
     linkedCells: []
     tileCells: []
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 204, y: 102}
-  previousTextureSize: {x: 256, y: 128}
+  canvasSize: {x: 400, y: 400}
+  previousTextureSize: {x: 512, y: 512}
