@@ -168,6 +168,7 @@ MonoBehaviour:
   _Animator: {fileID: 1366906295822803100}
   AboveCollider: {fileID: 4910007458445045371}
   BelowCollider: {fileID: 5611249101198404677}
+  TopperGraphic: {fileID: 3267882270248725306}
   PlayerBelowZPosition: 1
   PlayerAboveZPosition: -1
   YBuffer: 0.1

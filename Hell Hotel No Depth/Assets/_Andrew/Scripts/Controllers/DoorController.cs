@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour
     [SerializeField] private Animator _Animator;
     [SerializeField] private BoxCollider2D AboveCollider;
     [SerializeField] private BoxCollider2D BelowCollider;
+    [SerializeField] private Transform TopperGraphic;
 
     [Header("Settings")]
     [SerializeField] private float PlayerBelowZPosition = 1;
@@ -31,6 +32,12 @@ public class DoorController : MonoBehaviour
 
         AboveCollider.enabled = Direction == 0 && PlayerAbove;
         BelowCollider.enabled = Direction == 0 && !PlayerAbove;
+
+        TopperGraphic.position = new Vector3(
+            TopperGraphic.position.x,
+            TopperGraphic.position.y,
+            PlayerAboveZPosition
+        );
     }
 
     private void CheckPlayerPosition() => PlayerAbove = PlayerController.Instance.GetPosition().y - (Direction != 0 ? OpenYBuffer : YBuffer) > transform.position.y;

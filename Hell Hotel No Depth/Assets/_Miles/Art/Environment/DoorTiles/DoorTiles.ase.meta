@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: DoorTiles
     originalName: 
-    pivot: {x: 0.5, y: -0.01}
+    pivot: {x: 0.5049505, y: -0.01}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,7 +137,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 100
+      width: 101
       height: 100
     spriteID: 7bbb106b7ab464547b95e5c78f8f65a4
     spriteBone: []
@@ -167,9 +167,9 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
+        x: 0
         y: 1
-        width: 100
+        width: 101
         height: 100
       spriteId: 7bbb106b7ab464547b95e5c78f8f65a4
     linkedCells: []
