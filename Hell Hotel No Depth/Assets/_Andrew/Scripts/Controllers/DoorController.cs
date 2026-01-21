@@ -33,6 +33,9 @@ public class DoorController : MonoBehaviour
 
     private void CheckPlayerPosition() => PlayerAbove = PlayerController.Instance.GetPosition().y > transform.position.y;
 
+    public void OnHovered(InteractableController _) => _Animator.SetFloat("hovered", 1);
+    public void OnUnhovered(InteractableController _) => _Animator.SetFloat("hovered", 0);
+
     public void OnInteract(InteractableController _interactableController)
     {
         CheckPlayerPosition();

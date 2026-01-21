@@ -231,6 +231,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: closed_h
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228e42e767371c24184bc605fd529627
+      internalID: -500662170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -254,6 +276,7 @@ TextureImporter:
       DoorTiles_6: -1253079721
       DoorTiles_7: 81738166
       closed: -575498889
+      closed_h: -500662170
       top: -1786033117320680304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

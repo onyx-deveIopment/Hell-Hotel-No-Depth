@@ -182,8 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ca96a3bbf45b44780ec0ca465d91f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableController
-  OutlineObjects:
-  - {fileID: 1416179310977724120}
+  OutlineObjects: []
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -199,7 +198,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHover:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2901301684415750245}
+        m_TargetAssemblyTypeName: DoorController, Assembly-CSharp
+        m_MethodName: OnHovered
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnUnhover:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2901301684415750245}
+        m_TargetAssemblyTypeName: DoorController, Assembly-CSharp
+        m_MethodName: OnUnhovered
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  UnhoverOnInteract: 1
   Hovered: 0
+  LastHovered: 0
   ActiveTasks: 0
 --- !u!61 &5611249101198404677
 BoxCollider2D:
@@ -396,7 +427,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 080847523e091e2408dcbc412f19a0c5, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

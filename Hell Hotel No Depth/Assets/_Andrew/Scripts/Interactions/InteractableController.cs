@@ -4,14 +4,17 @@ using System.Collections.Generic;
 
 public class InteractableController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private List<SpriteRenderer> OutlineObjects;
-
     [Header("Events")]
     [SerializeField] private UnityEvent<InteractableController> OnInteract;
+    [SerializeField] private UnityEvent<InteractableController> OnHover;
+    [SerializeField] private UnityEvent<InteractableController> OnUnhover;
+
+    [Header("Settings")]
+    [SerializeField] private bool UnhoverOnInteract = true;
 
     [Header("Debug")]
     [SerializeField] private bool Hovered;
+    [SerializeField] private bool LastHovered;
     [SerializeField] private int ActiveTasks = 0;
 
     private void Start() => gameObject.layer = LayerMask.NameToLayer("Interactable");
@@ -20,9 +23,12 @@ public class InteractableController : MonoBehaviour
 
     private void Update()
     {
-        foreach (var outlineObject in OutlineObjects)
+        if (Hovered != LastHovered)
         {
-            outlineObject.material.SetFloat("_Outline", Hovered && ActiveTasks <= 0 ? 1 : 0);
+            if (Hovered) OnHover.Invoke(this);
+            else OnUnhover.Invoke(this);
+
+            LastHovered = Hovered;
         }
     }
 
@@ -36,6 +42,8 @@ public class InteractableController : MonoBehaviour
 
         ActiveTasks = OnInteract.GetPersistentEventCount();
         OnInteract.Invoke(this);
+
+        if (UnhoverOnInteract) SetHovered(false);
     }
 
     public void EndInteraction()

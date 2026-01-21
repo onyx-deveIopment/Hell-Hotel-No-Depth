@@ -30,6 +30,9 @@ public class MaragetCutscene : MonoBehaviour
         MargaretGraphics.position = Vector3.MoveTowards(MargaretGraphics.position, TargetPosition.position, MoveSpeed * Time.deltaTime);
     }
 
+    public void OnHovered(InteractableController _) => _Animator.SetFloat("hovered", 1);
+    public void OnUnhovered(InteractableController _) => _Animator.SetFloat("hovered", 0);
+
     public void OnInteract(InteractableController _source)
     {
         Source = _source;
