@@ -10,6 +10,7 @@ public class MaragetCutscene : MonoBehaviour
     [SerializeField] private TimeWaster _TimeWaster;
     [SerializeField] private ObjectiveScriptableObject Objective;
     [SerializeField] private Animator _Animator;
+    [SerializeField] private Animator _DoorAnimator;
     [SerializeField] private Transform IdlePosition;
     [SerializeField] private Transform MovePosition;
 
@@ -49,6 +50,7 @@ public class MaragetCutscene : MonoBehaviour
         _TimeWaster.OnTimeWasted.AddListener(OnDoneMoveing);
         _Animator.SetBool("idle", false);
         TargetPosition = MovePosition;
+        _DoorAnimator.SetInteger("direction", 90);
         _TimeWaster.WasteTime(MoveTime);
     }
 
