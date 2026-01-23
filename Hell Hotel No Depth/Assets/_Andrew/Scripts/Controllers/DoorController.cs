@@ -4,9 +4,13 @@ public class DoorController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Animator _Animator;
+    [SerializeField] private Transform TopperGraphic;
+    [Space]
     [SerializeField] private BoxCollider2D AboveCollider;
     [SerializeField] private BoxCollider2D BelowCollider;
-    [SerializeField] private Transform TopperGraphic;
+    [Space]
+    [SerializeField] private GameObject ClosedShadows;
+    [SerializeField] private GameObject OpenShadows;
 
     [Header("Settings")]
     [SerializeField] private float PlayerBelowZPosition = 1;
@@ -38,6 +42,9 @@ public class DoorController : MonoBehaviour
             TopperGraphic.position.y,
             PlayerAboveZPosition
         );
+
+        ClosedShadows.SetActive(Direction == 0);
+        OpenShadows.SetActive(Direction != 0);
     }
 
     private void CheckPlayerPosition() => PlayerAbove = PlayerController.Instance.GetPosition().y - (Direction != 0 ? OpenYBuffer : YBuffer) > transform.position.y;
