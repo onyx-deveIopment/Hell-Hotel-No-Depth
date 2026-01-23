@@ -56,5 +56,7 @@ public class DoorController : MonoBehaviour
     {
         CheckPlayerPosition();
         Direction = PlayerAbove ? -90 : 90;
+
+        _interactableController.EndInteraction();
     }
 }

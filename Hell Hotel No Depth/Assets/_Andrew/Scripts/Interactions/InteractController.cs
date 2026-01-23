@@ -54,7 +54,7 @@ public class InteractController : MonoBehaviour
             HoveredInteractable.Interact();
         }
 
-        Debug.DrawLine(origin, target, Color.red);
+        Debug.DrawLine(origin, target, Color.yellow);
     }
 
     public void NotifyInteractionComplete() => AwaitingInteracCompletion = false;
