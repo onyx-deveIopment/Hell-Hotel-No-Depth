@@ -58,13 +58,13 @@ public class MaragetCutscene : MonoBehaviour
     {
         _TimeWaster.OnTimeWasted.RemoveListener(OnDoneMoveing);
         CameraController.Instance.RemoveTarget(MargaretGraphics);
-        BlacknessController.Instance.OnBlacknessFadedIn.AddListener(OnBlacknessFadedIn);
-        BlacknessController.Instance.SetFadeIn(true);
+        BlacknessController.Instance.TargetAlphaReached.AddListener(OnBlacknessFadedIn);
+        BlacknessController.Instance.SetTargetAlpha(1);
     }
 
     public void OnBlacknessFadedIn(BlacknessController _)
     {
-        BlacknessController.Instance.OnBlacknessFadedIn.RemoveListener(OnBlacknessFadedIn);
+        BlacknessController.Instance.TargetAlphaReached.RemoveListener(OnBlacknessFadedIn);
         PlayerController.Instance.TeleportTo(TeleportPosition.position);
         CameraController.Instance.Quick(CameraQuickFrames);
         _TimeWaster.OnTimeWasted.AddListener(OnTimeWasted);
@@ -74,13 +74,13 @@ public class MaragetCutscene : MonoBehaviour
     public void OnTimeWasted(TimeWaster _)
     {
         _TimeWaster.OnTimeWasted.RemoveListener(OnTimeWasted);
-        BlacknessController.Instance.OnBlacknessFadedOut.AddListener(OnCutsceneEnd);
-        BlacknessController.Instance.SetFadeIn(false);
+        BlacknessController.Instance.TargetAlphaReached.AddListener(OnCutsceneEnd);
+        BlacknessController.Instance.SetTargetAlpha(0);
     }
 
     public void OnCutsceneEnd(BlacknessController _)
     {
-        BlacknessController.Instance.OnBlacknessFadedOut.RemoveListener(OnCutsceneEnd);
+        BlacknessController.Instance.TargetAlphaReached.RemoveListener(OnCutsceneEnd);
         DialogController.Instance.OnDialogEnded.RemoveListener(OnDialogEnd);
         PlayerController.Instance.SetPlayerCanMove(true);
         ObjectiveController.Instance.Popup(Objective);
