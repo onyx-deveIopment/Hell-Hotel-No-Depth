@@ -59,7 +59,7 @@ public class MaragetCutscene : MonoBehaviour
         _TimeWaster.OnTimeWasted.RemoveListener(OnDoneMoveing);
         CameraController.Instance.RemoveTarget(MargaretGraphics);
         BlacknessController.Instance.OnBlacknessFadedIn.AddListener(OnBlacknessFadedIn);
-        BlacknessController.Instance.SetFadeIn(true);
+        BlacknessController.Instance.SetTargetAlpha(1);
     }
 
     public void OnBlacknessFadedIn(BlacknessController _)
@@ -75,7 +75,7 @@ public class MaragetCutscene : MonoBehaviour
     {
         _TimeWaster.OnTimeWasted.RemoveListener(OnTimeWasted);
         BlacknessController.Instance.OnBlacknessFadedOut.AddListener(OnCutsceneEnd);
-        BlacknessController.Instance.SetFadeIn(false);
+        BlacknessController.Instance.SetTargetAlpha(0);
     }
 
     public void OnCutsceneEnd(BlacknessController _)
