@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47d1d2382e030924f935b44b6d032e17
+guid: 22b9b8d3c93595b4faac6a175432975d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: CoffeeMaker
+  - name: CustomCursor
     originalName: 
-    pivot: {x: 0.5, y: -0.02}
+    pivot: {x: 1.6363636, y: -1.1176472}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 36
-      height: 50
-    spriteID: db8e289fd07fe5f43a05c74702a772ad
+      width: 11
+      height: 17
+    spriteID: 8b083983864d8a54da574ec50e514133
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,25 +153,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1418640882
+      value0: 931818581
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: CoffeeMaker
+    name: CustomCursor
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: CoffeeMaker
+    - name: CustomCursor
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 1
-        width: 36
-        height: 50
-      spriteId: db8e289fd07fe5f43a05c74702a772ad
+        x: 0
+        y: 19
+        width: 11
+        height: 17
+      spriteId: 8b083983864d8a54da574ec50e514133
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 38, y: 52}
-  previousTextureSize: {x: 64, y: 64}
+  canvasSize: {x: 36, y: 36}
+  previousTextureSize: {x: 32, y: 32}

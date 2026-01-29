@@ -50,4 +50,5 @@ public class PlayerController : MonoBehaviour
     public void SetPlayerCanMove(bool _playerCanMove) => PlayerCanMove = _playerCanMove;
     public float GetDirection() => Direction;
     public Vector2 GetPosition() => rigidBody.position;
+    public Transform GetPlayer() => transform;
 }
